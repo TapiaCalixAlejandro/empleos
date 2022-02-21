@@ -16,7 +16,8 @@ class CreateVacantsTable extends Migration
         Schema::create('vacants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('experience_id')->constained()->onDelete('cascade')->onUpdate('cascade');            
+            $table->foreignId('experience_id')->constained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('location_id')->constrained()->onDelete('cascade')->onUpdate('cascade');            
             $table->timestamps();
         });
     }
