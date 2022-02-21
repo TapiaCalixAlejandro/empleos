@@ -73,7 +73,22 @@
                 </div>
             </div>
         </nav>
-
+        @guest
+            {{-- Nav empty --}}
+        @else
+        <nav class="navbar navbar-light bg-secondary opacity-75 shadow">
+            <form class="container-fluid justify-content-start pl-5 ml-5">
+                {{-- <button class="btn btn-light mr-3 shadow-sm" type="button">Ver vacantes</button>
+                <button class="btn btn-light mr-3 shadow-sm" type="button">Crear vacante</button> --}}
+                <a href="{{route('home')}}" class="text-decoration-none btn btn-link text-white mr-3 {{Request::is('home')?'bg-dark text-white':''}}">
+                    <strong>Ver vacantes</strong>
+                </a>
+                <a href="{{route('vacant.create')}}" class="text-decoration-none btn btn-link text-white mr-3 {{Request::is('vacant/create')?'bg-dark text-white':''}}">
+                    <strong>Crear vacante</strong>
+                </a>
+            </form>
+        </nav>
+        @endguest
         <main class="py-4">
             @yield('content')
         </main>
