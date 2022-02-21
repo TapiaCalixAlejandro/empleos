@@ -17,7 +17,8 @@ class CreateVacantsTable extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('experience_id')->constained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('location_id')->constrained()->onDelete('cascade')->onUpdate('cascade');            
+            $table->foreignId('location_id')->constrained()->onDelete('cascade')->onUpdate('cascade'); 
+            $table->foreignId('salary_id')->constrained()->onDelete('cascade')->onUpdate('cascade');           
             $table->timestamps();
         });
     }

@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(ExperienceSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(SalarySeeder::class);
     }
 }
